@@ -1,0 +1,5 @@
+// what is array 
+// psudocode 
+// time and space complexity 
+// patterns 
+// important q's
