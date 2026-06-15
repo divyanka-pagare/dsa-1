@@ -1,5 +1,6 @@
 package oop;
 
+// import java.util.*;
 public class WrapperExample {
     public static void main(String[] args) {
         // int a = 10;
@@ -10,7 +11,7 @@ public class WrapperExample {
         Integer a = 10;
         Integer b = 20;
 
-        swap(a, b);
+        swap(a, b);  // this will not work because java is pass by value , only local variable inside swap() will chnage. The original a and b in main() remain unchanged.
         System.out.println(a + " " + b);
 
 
@@ -18,18 +19,25 @@ public class WrapperExample {
         // bonus = 3;   // when use final keyword u cant modify it 
 
 
-        final A divyanka = new A("Divyanka Pagare");
-
-        divyanka.name = "other name";
+        // final A divyanka = new A("Divyanka Pagare");
+        // divyanka.name = "other name";
 
         //when a non primitive is final, you can not reassign it.
-        divyanka = new A("new Object");
+        // divyanka = new A("new object");
+
+        A obj = new A("hkshweufj");
+        System.out.println(obj);
+        // for (int i = 0; i < 1000; i++) {
+        //     obj = new A("Random name");
+        // }
     }
 
     // error: cannot assign a value to final variable divyanka
     //     divyanka = new A("new Object");
     //     ^
     // 1 error
+
+
 
 
     static void swap(Integer a, Integer b) {
@@ -39,15 +47,18 @@ public class WrapperExample {
     }
 
 }
-
-
-
 class A {
     final int num = 10;
     String name;
 
     public A(String name) {
+        // System.out.println("Object is destroyed");
         this.name = name;
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("Object is destroyed");
     }
 }
 
@@ -66,5 +77,18 @@ final studnet ritesh = new Student();
 ritesh.name = "Ritesh Girase";
 
 ritesh = other object // this is not allowed
+
+
+
+----------------------------------------------------------
+like constructors there are destructors 
+
+you can not destroy the object manually but you can decide 
+what will happen when object get destroyed by garbage collection 
+
+java says you can specify this specific actions that will occurs 
+when the object is about to be taken away by garbage collector using finalizer 
+
+and finalizer u can add by using finalize method 
 
 */
