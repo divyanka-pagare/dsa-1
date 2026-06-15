@@ -1,4 +1,4 @@
-import java.util.*;
+// import java.util.*;
 public class pairs_in_array {
     public static void printPairs(int numbers[]) {
         int tp = 0;

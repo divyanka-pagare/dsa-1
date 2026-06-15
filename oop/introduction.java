@@ -37,17 +37,9 @@ public class introduction {
         // 95.4
 
         
-        Student random = new Student();
-        System.out.println(random.rno);
-        System.out.println(random.name);
-        System.out.println(random.marks);
-        // 11
-        // Ritesh Girase
-        // 95.4
+       
 
-        Student random2 = new Student();
 
-        
         // Student om = new Student(15, "Akhilesh", 89.4f);
 
         // System.out.println(om.rno);
@@ -77,15 +69,25 @@ public class introduction {
         // System.out.println(ritesh.rno);
         // System.out.println(ritesh.name);
         // System.out.println(ritesh.marks);
-
-
         // System.out.println(ritesh.salary);  // error --> java is static type language
+    
+        Student random = new Student();
+        System.out.println(random.rno);
+        System.out.println(random.name);
+        System.out.println(random.marks);
+        // 11
+        // Ritesh Girase
+        // 95.4
 
+        Student random2 = new Student();
+        System.out.println(random2.name);
 
-        //output
-        // 1
-        // Ritesh Giase
-        // 95.0
+        Student one = new Student();
+        Student two = one;
+
+        one.name = "Something something";
+        System.out.println(two.name);
+        
     }
 }
 
