@@ -1,8 +1,8 @@
-package oop;
+package oop.introduction;
 
 import java.util.*;
 
-public class introduction {
+public class Main {
     public static void main(String[] args) {
         //store 5 roll numbers
         // int[] numbers = new int[5];
