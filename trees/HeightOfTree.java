@@ -11,6 +11,17 @@ public class HeightOfTree {
             this.right = null;
         }
     }
+
+    public static int height(Node root) {
+        if(root == null) {
+            return 0;
+        }
+
+        int lh = height(root.left);
+        int rh = height(root.right);
+        return Math.max(lh, rh) + 1;
+    }
+
 //*********************************************************** */
     public static int count(Node root) {
         if(root == null) {
@@ -32,6 +43,23 @@ public class HeightOfTree {
         int rightSum = sum(root.right);
         return leftSum + rightSum + root.data;
     }
+
+    public static int diameter(Node root) {
+        if(root == null) {
+            return 0;
+        }
+
+        int leftDiam = diameter(root.left);
+        int leftHt = height(root.left);
+        int rightDiam = diameter(root.right);
+        int rightHt = height(root.right);
+
+        int selfDiam = leftHt + rightHt + 1;
+
+        return Math.max(selfDiam, Math.max(leftDiam, rightDiam));
+    }
+
+
     public static void main(String args[]) {
 
         /*
@@ -54,5 +82,7 @@ public class HeightOfTree {
 
        System.out.println(count(root)); //7
        System.out.println(sum(root)); //28
+
+       System.out.println(diameter(root)); //5
     }
 }
